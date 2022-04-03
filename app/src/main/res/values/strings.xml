@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Task5</string>
+    <string name="text_run_distance">გარბენილი მანძილი</string>
+    <string name="text_zero_km">0km</string>
+    <string name="text_swim_distance">გაცურული მანძილი</string>
+    <string name="text_calories">მიღებული კალორია</string>
+    <string name="text_calorie">0 calorie</string>
+    <string name="save">save</string>
+    <string name="show_statistics">show statistics</string>
 </resources>

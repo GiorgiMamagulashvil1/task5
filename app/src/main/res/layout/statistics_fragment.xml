@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.statistics_screen.StatisticsFragment">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/runDistanceEditText"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="@dimen/dimen_60_dp"
+        android:layout_marginTop="@dimen/dimen_60_dp"
+        android:hint="@string/text_zero_km"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10_dp"
+        android:text="@string/text_run_distance"
+        app:layout_constraintBottom_toTopOf="@+id/runDistanceEditText"
+        app:layout_constraintStart_toStartOf="@+id/runDistanceEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/swimDistanceEditText"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="@dimen/dimen_60_dp"
+        android:layout_marginTop="@dimen/dimen_60_dp"
+        android:hint="@string/text_zero_km"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/runDistanceEditText"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10_dp"
+        android:text="@string/text_swim_distance"
+        app:layout_constraintBottom_toTopOf="@+id/swimDistanceEditText"
+        app:layout_constraintStart_toStartOf="@+id/swimDistanceEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/caloriesEditText"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="@dimen/dimen_60_dp"
+        android:layout_marginTop="@dimen/dimen_60_dp"
+        android:hint="@string/text_calorie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swimDistanceEditText"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10_dp"
+        android:text="@string/text_calories"
+        app:layout_constraintBottom_toTopOf="@+id/caloriesEditText"
+        app:layout_constraintStart_toStartOf="@+id/caloriesEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20_dp"
+        android:text="@string/save"
+        app:layout_constraintTop_toBottomOf="@+id/caloriesEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/showStatisticButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_20_dp"
+        android:background="@android:color/transparent"
+        android:text="@string/show_statistics"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
