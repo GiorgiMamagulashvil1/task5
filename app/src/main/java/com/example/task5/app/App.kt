@@ -1,7 +1,7 @@
 package com.example.task5.app
 
 import android.app.Application
-import com.example.task5.di.dbModule
+import com.example.task5.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -10,7 +10,7 @@ class App:Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-            modules(listOf(dbModule))
+            modules(listOf(dbModule, mapperModule, repoModule,vmModule, useCaseModule))
         }
     }
 }

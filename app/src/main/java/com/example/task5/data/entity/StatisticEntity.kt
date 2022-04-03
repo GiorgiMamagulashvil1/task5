@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 data class StatisticEntity(
     @PrimaryKey(autoGenerate = true)
     var id:Int? = null,
-    val runDistance:Int? = null,
-    val swimDistance:Int? = null,
-    val calorie:Int? = null
+    val runDistance:Double,
+    val swimDistance:Double,
+    val calorie:Double
 )
