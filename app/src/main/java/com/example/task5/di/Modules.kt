@@ -27,7 +27,7 @@ val repoModule = module {
     factory<StatisticRepository> { StatisticRepositoryImpl(get(), get(), get()) }
 }
 val vmModule = module {
-    viewModel { StatisticsViewModel(addStatisticsUseCase = get()) }
+    viewModel { StatisticsViewModel(addStatisticsUseCase = get(),get()) }
 }
 val useCaseModule = module {
     factory<AddStatisticsUseCase> { AddStatisticsUseCaseImpl(get()) }

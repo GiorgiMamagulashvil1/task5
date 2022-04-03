@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.task5.databinding.StatisticsFragmentBinding
-import org.koin.android.ext.android.get
+import com.example.task5.presentation.custom_bottomsheet.DetailsBottomSheet
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StatisticsFragment : Fragment() {
@@ -14,6 +17,8 @@ class StatisticsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val vm: StatisticsViewModel by viewModel()
+    private lateinit var detailBottomSheet: DetailsBottomSheet
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,24 +30,46 @@ class StatisticsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setListeners()
+        vm.setStatisticDetails()
+        observeDetails()
     }
 
-    private fun setListeners(){
-        with(binding){
-            saveButton.setOnClickListener {
-                setStatisticParameters()
+    private fun observeDetails() {
+        detailBottomSheet = DetailsBottomSheet()
+        viewLifecycleOwner.lifecycleScope.launch {
+            vm.statisticFlow.collect { detail ->
+                detail?.let {
+                    detailBottomSheet.setDetails(
+                        it.avrRunDistance,
+                        it.avrSwimDistance,
+                        it.avrCalories,
+                        it.totalRunDistance
+                    )
+                }
             }
         }
     }
+
+    private fun setListeners() {
+        with(binding) {
+            saveButton.setOnClickListener {
+                setStatisticParameters()
+            }
+            showStatisticButton.setOnClickListener {
+                vm.setStatisticDetails()
+                detailBottomSheet.show(childFragmentManager, null)
+            }
+        }
+    }
+
     private fun setStatisticParameters() {
         with(binding) {
             vm.setStatistic(
-                runDistanceEditText.text.convertToInt(),
-                swimDistanceEditText.text.convertToInt(),
-                caloriesEditText.text.convertToInt()
+                runDistanceEditText.text.convertToDouble(),
+                swimDistanceEditText.text.convertToDouble(),
+                caloriesEditText.text.convertToDouble()
             )
         }
-
     }
 
     override fun onDestroyView() {

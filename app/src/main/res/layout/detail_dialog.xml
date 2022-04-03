@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20_dp"
+        android:layout_marginTop="@dimen/dimen_20_dp"
+        android:text="@string/text_average"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/averageRunDistanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30_dp"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2"
+        tools:text="0.0 km" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/averageSwimDistanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30_dp"
+        app:layout_constraintStart_toStartOf="@+id/averageRunDistanceTextView"
+        app:layout_constraintTop_toBottomOf="@+id/averageRunDistanceTextView"
+        tools:text="0.0 km" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/averageCaloriesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30_dp"
+        app:layout_constraintStart_toStartOf="@+id/averageSwimDistanceTextView"
+        app:layout_constraintTop_toBottomOf="@+id/averageSwimDistanceTextView"
+        tools:text="0.0 km" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/totalDistanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30_dp"
+        app:layout_constraintStart_toStartOf="@+id/averageCaloriesTextView"
+        app:layout_constraintTop_toBottomOf="@+id/averageCaloriesTextView"
+        tools:text="0.0 km" />
+</androidx.constraintlayout.widget.ConstraintLayout>

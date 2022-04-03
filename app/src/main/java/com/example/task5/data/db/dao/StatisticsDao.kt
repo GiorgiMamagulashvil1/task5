@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.task5.data.entity.StatisticEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface StatisticsDao {
